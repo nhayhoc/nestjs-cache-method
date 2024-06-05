@@ -39,9 +39,7 @@ export interface CacheOptions {
  * @param options
  * @returns
  */
-export function CacheMethod(
-  options: CacheOptions = { ttlMs: 60000 },
-): MethodDecorator {
+export function CacheMethod(options?: CacheOptions): MethodDecorator {
   return (
     target: any,
     propertyKey: string | symbol,
@@ -63,7 +61,7 @@ export function CacheMethod(
       const cacheKey = `${cacheKeyPrefix}:${JSON.stringify(args)}`;
 
       const ttl =
-        options.ttlMs ||
+        options?.ttlMs ||
         Reflect.getMetadata(CACHE_TTL_METADATA, descriptor.value) ||
         Reflect.getMetadata(CACHE_TTL_METADATA, originalMethod) ||
         60000;
