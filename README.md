@@ -25,7 +25,7 @@ export class LolVersionService {
 
 1. Install Package and Setup Module: Refer to the [NestJS Caching Documentation](https://docs.nestjs.com/techniques/caching) for installation and module setup instructions. 
 2. Write CacheMethod Decorator: Utilize the provided CacheMethod decorator as demonstrated below.
-```
+```ts
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
 import { CACHE_KEY_METADATA, CACHE_TTL_METADATA, Inject } from '@nestjs/common';
 import { Cache } from 'cache-manager';
